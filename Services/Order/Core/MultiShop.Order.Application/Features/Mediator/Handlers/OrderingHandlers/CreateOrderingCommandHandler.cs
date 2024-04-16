@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MultiShop.Order.Application.Features.Mediator.Handlers.OrderingHandlers
 {
-    public class CreateOrderingCommandHandler : IRequest<CreateOrderingCommand>
+    public class CreateOrderingCommandHandler : IRequestHandler<CreateOrderingCommand>
     {
         private readonly IRepository<Ordering> _repository;
 

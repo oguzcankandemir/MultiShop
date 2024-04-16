@@ -11,9 +11,9 @@ namespace MultiShop.Order.Application.Features.Mediator.Commands.OrderingCommand
     {
         public RemoveOrderingRequest(int id)
         {
-            İd = id;
+            Id = id;
         }
 
-        public int İd { get; set; }
+        public int Id { get; set; }
     }
 }

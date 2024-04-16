@@ -8,9 +8,9 @@ namespace MultiShop.Order.Application.Features.CQRS.Queries.OrderDetailQueries
 {
     public class GetOrderDetailByIdQuery
     {
-        public GetOrderDetailByIdQuery(int ıd)
+        public GetOrderDetailByIdQuery(int id)
         {
-            Id = ıd;
+            Id = id;
         }
 
         public int Id { get; set; }
