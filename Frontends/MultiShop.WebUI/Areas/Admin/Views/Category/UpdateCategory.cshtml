@@ -1,5 +1,6 @@
-﻿@model MultiShop.DtoLayer.CatalogDtos.CategoryDtos.UpdateCategoryDto
-
+﻿@using MultiShop.DtoLayer.CatalogDtos.CategoryDtos
+@model UpdateCategoryDto
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "UpdateCategory";
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
@@ -16,6 +17,7 @@
 
                     <form method="post">
                         <input type="hidden" asp-for="CategoryID" />
+                        <br />
                         <label>Kategori Adı</label>
                         <input type="text" class="form-control" asp-for="CategoryName" />
                         <br />

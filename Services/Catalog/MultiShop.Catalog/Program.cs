@@ -19,7 +19,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
     opt.RequireHttpsMetadata = false;
 });
 
-
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IProductDetailService, ProductDetailService>();
