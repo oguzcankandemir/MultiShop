@@ -1,5 +1,4 @@
-﻿@using MultiShop.DtoLayer.CatalogDtos.ProductDtos
-@model UpdateProductDto
+﻿@model MultiShop.DtoLayer.CatalogDtos.ProductDtos.UpdateProductDto
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "UpdateProduct";
@@ -16,7 +15,7 @@
                 <div class="bs-example" data-example-id="bordered-table">
 
                     <form method="post">
-                        <input type="hidden" asp-for="CategoryId" />
+                        <input type="hidden" asp-for="ProductId"/>
                         <label>Ürün Adı</label>
                         <input type="text" class="form-control" asp-for="ProductName" />
                         <br />

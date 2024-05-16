@@ -77,8 +77,8 @@ namespace MultiShop.WebUI.Areas.Admin.Controllers
             }
             return View();
         }
-        [Route("UpdateProduct/{id}")]
         [HttpGet]
+        [Route("UpdateProduct/{id}")]
         public async Task<IActionResult> UpdateProduct(string id)
         {
             ViewBag.v1 = "Ana Sayfa";
@@ -98,7 +98,7 @@ namespace MultiShop.WebUI.Areas.Admin.Controllers
             ViewBag.CategoryValues = categoryValues1;
 
             var clientt = _httpClientFactory.CreateClient();
-            var responseMessagee = await client.GetAsync("https://localhost:7071/api/Products/"+id);
+            var responseMessagee = await clientt.GetAsync("https://localhost:7071/api/Products" + id);
             if (responseMessagee.IsSuccessStatusCode)
             {
                 var jsonDataa = await responseMessagee.Content.ReadAsStringAsync();
@@ -121,5 +121,19 @@ namespace MultiShop.WebUI.Areas.Admin.Controllers
             }
             return View();
         }
+        [Route("ProductListWithCategory")]
+        public async Task<IActionResult> ProductListWithCategory()
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("https://localhost:7071/api/Products/ProductListWithCategory");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<List<ResultProductWithCategoryDto>>(jsonData);
+                return View(values);
+            }
+            return View();
+        }
+
     }
 }
